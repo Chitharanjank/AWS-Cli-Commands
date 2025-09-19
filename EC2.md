@@ -38,6 +38,15 @@ aws ec2 terminate-instances --instance-ids i-xxxxxxxxxxxxxxxxx
 aws ec2 create-key-pair --key-name MyKeyPair
 ```
 
+###  Create a Key Pair & Download it
+
+```bash
+aws ec2 create-key-pair \
+  --key-name MyKeyPair \
+  --query 'KeyMaterial' \
+  --output text > MyKeyPair.pem
+```
+
 ###  Describe Available AMIs
 
 ```bash
